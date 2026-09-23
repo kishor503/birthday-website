@@ -1,2053 +1,725 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday My Love ❤️</title>
-
-<style>
-
-/* =========================================
-   GENERAL
-========================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    min-height: 100%;
-}
-
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    overflow-x: hidden;
-    color: #5a2639;
-}
-
-.page {
-    display: none;
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
-.page.active {
-    display: flex;
-}
-
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.main-button {
-    border: none;
-
-    padding: 16px 32px;
-
-    border-radius: 40px;
-
-    background: linear-gradient(
-        135deg,
-        #e91e63,
-        #ff5c93
-    );
-
-    color: white;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 25px rgba(233,30,99,0.3);
-
-    transition: 0.3s;
-}
-
-.main-button:hover {
-    transform: scale(1.06);
-
-    box-shadow:
-        0 12px 30px rgba(233,30,99,0.4);
-}
-
-.back-button {
-    border: 2px solid #e91e63;
-
-    padding: 12px 25px;
-
-    border-radius: 30px;
-
-    background: white;
-
-    color: #e91e63;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    margin-top: 20px;
-
-    transition: 0.3s;
-}
-
-.back-button:hover {
-    background: #e91e63;
-
-    color: white;
-}
-
-
-/* =========================================
-   HOME PAGE
-========================================= */
-
-#homePage {
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(255,182,203,0.35),
-            rgba(255,228,238,0.55)
-        ),
-        url("photos/main.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    padding: 30px;
-}
-
-.home-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,255,255,0.45),
-            rgba(255,192,203,0.35)
-        );
-}
-
-.home-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 800px;
-
-    background:
-        rgba(255,255,255,0.80);
-
-    padding: 55px 40px;
-
-    border-radius: 30px;
-
-    box-shadow:
-        0 20px 60px rgba(120,30,60,0.25);
-
-    backdrop-filter: blur(8px);
-}
-
-.home-heart {
-
-    font-size: 65px;
-
-    animation:
-        heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat {
-
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.home-content h1 {
-
-    font-size: 55px;
-
-    color: #e91e63;
-
-    margin: 15px 0;
-}
-
-.home-content h2 {
-
-    font-size: 28px;
-
-    margin-bottom: 20px;
-}
-
-.home-content p {
-
-    font-size: 19px;
-
-    line-height: 1.8;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================================
-   LETTER PAGE
-========================================= */
-
-#letterPage {
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 40px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff0f5,
-            #ffdce8
-        );
-}
-
-.letter-container {
-
-    width: 100%;
-
-    max-width: 850px;
-
-    text-align: center;
-}
-
-.page-title {
-
-    font-size: 42px;
-
-    color: #e91e63;
-
-    margin-bottom: 30px;
-}
-
-.letter {
-
-    background: #fffdf8;
-
-    padding: 50px;
-
-    border-radius: 8px;
-
-    text-align: left;
-
-    box-shadow:
-        0 15px 45px rgba(100,30,50,0.15);
-
-    border-left: 7px solid #e91e63;
-
-    position: relative;
-}
-
-.letter::before {
-
-    content: "❤️";
-
-    position: absolute;
-
-    top: 15px;
-
-    right: 20px;
-
-    font-size: 25px;
-}
-
-.letter p {
-
-    font-family: Georgia, serif;
-
-    font-size: 19px;
-
-    line-height: 2;
-
-    margin-bottom: 20px;
-}
-
-.letter-signature {
-
-    text-align: right;
-
-    color: #e91e63;
-
-    font-size: 22px !important;
-
-    font-weight: bold;
-}
-
-.letter-buttons {
-
-    text-align: center;
-
-    margin-top: 30px;
-}
-
-
-/* =========================================
-   DATE PAGE
-========================================= */
-
-#datePage {
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 40px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe0eb,
-            #fff5f8
-        );
-}
-
-.date-container {
-
-    width: 100%;
-
-    max-width: 850px;
-}
-
-.date-icon {
-
-    font-size: 70px;
-
-    margin-bottom: 15px;
-}
-
-.date-container h1 {
-
-    font-size: 42px;
-
-    color: #e91e63;
-
-    margin-bottom: 20px;
-}
-
-.date-question {
-
-    font-size: 30px;
-
-    font-weight: bold;
-
-    margin-bottom: 15px;
-}
-
-.date-subtitle {
-
-    font-size: 18px;
-
-    margin-bottom: 35px;
-}
-
-
-/* =========================================
-   YES / NO BUTTONS
-========================================= */
-
-.date-buttons {
-
-    width: 100%;
-
-    max-width: 650px;
-
-    height: 150px;
-
-    margin: auto;
-
-    position: relative;
-
-    display: block;
-}
-
-.yes-button,
-.no-button {
-
-    padding: 15px 35px;
-
-    border: none;
-
-    border-radius: 35px;
-
-    font-size: 19px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.yes-button {
-
-    background: #e91e63;
-
-    color: white;
-
-    margin-right: 20px;
-
-    transition: 0.3s;
-}
-
-.yes-button:hover {
-
-    transform: scale(1.12);
-}
-
-.no-button {
-
-    background: #ddd;
-
-    color: #444;
-
-    position: absolute;
-
-    left: 55%;
-
-    top: 0;
-
-    transition: 0.15s;
-}
-
-
-/* =========================================
-   DATE PLANNING
-========================================= */
-
-#datePlanning {
-
-    display: none;
-
-    margin-top: 10px;
-}
-
-.accepted-message {
-
-    font-size: 25px;
-
-    color: #e91e63;
-
-    font-weight: bold;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================================
-   PLANNING BOX
-========================================= */
-
-.planning-box {
-
-    background:
-        rgba(255,255,255,0.85);
-
-    padding: 30px;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 35px rgba(100,30,50,0.12);
-
-    max-width: 650px;
-
-    margin: auto;
-}
-
-.planning-box h2 {
-
-    color: #e91e63;
-
-    margin-bottom: 20px;
-
-    font-size: 25px;
-}
-
-.selection-group {
-
-    margin-bottom: 22px;
-
-    text-align: left;
-}
-
-.selection-group label {
-
-    display: block;
-
-    font-weight: bold;
-
-    font-size: 17px;
-
-    margin-bottom: 8px;
-}
-
-.selection-group input[type="date"],
-.selection-group input[type="time"] {
-
-    width: 100%;
-
-    padding: 13px;
-
-    border: 2px solid #f3b5c9;
-
-    border-radius: 12px;
-
-    font-size: 16px;
-
-    background: white;
-
-    outline: none;
-}
-
-.selection-group input:focus {
-
-    border-color: #e91e63;
-}
-
-
-/* =========================================
-   FOOD MENU
-========================================= */
-
-.food-options {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-}
-
-.food-option {
-
-    position: relative;
-}
-
-.food-option input {
-
-    position: absolute;
-
-    opacity: 0;
-
-}
-
-.food-option label {
-
-    display: block;
-
-    padding: 15px 10px;
-
-    background: #fff;
-
-    border: 2px solid #f3b5c9;
-
-    border-radius: 15px;
-
-    text-align: center;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-weight: 600;
-}
-
-.food-option input:checked + label {
-
-    background: #e91e63;
-
-    color: white;
-
-    border-color: #e91e63;
-
-    transform: scale(1.03);
-}
-
-
-/* =========================================
-   CONFIRM BUTTON
-========================================= */
-
-.confirm-date-button {
-
-    margin-top: 10px;
-
-    width: 100%;
-}
-
-
-/* =========================================
-   FINAL CONFIRMATION
-========================================= */
-
-.final-confirmation {
-
-    display: none;
-
-    margin-top: 20px;
-
-    padding: 18px;
-
-    background: #fff0f5;
-
-    border-radius: 15px;
-
-    color: #e91e63;
-
-    font-weight: bold;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================
-   MEMORIES BUTTON
-========================================= */
-
-.memories-button {
-
-    display: none;
-
-    margin-top: 25px;
-}
-
-
-/* =========================================
-   MEMORIES PAGE
-========================================= */
-
-#memoriesPage {
-
-    display: none;
-
-    padding: 50px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff0f5,
-            #ffe1eb
-        );
-}
-
-#memoriesPage.active {
-
-    display: block;
-}
-
-.memories-container {
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    text-align: center;
-}
-
-.memories-container h1 {
-
-    font-size: 42px;
-
-    color: #e91e63;
-
-    margin-bottom: 40px;
-}
-
-
-/* =========================================
-   GALLERY
-========================================= */
-
-.gallery {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.gallery img {
-
-    width: 100%;
-
-    height: 300px;
-
-    object-fit: cover;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.15);
-
-    transition: 0.3s;
-}
-
-.gallery img:hover {
-
-    transform: scale(1.04);
-}
-
-.memory-navigation {
-
-    margin-top: 40px;
-}
-
-
-/* =========================================
-   FLOATING HEARTS
-========================================= */
-
-.heart {
-
-    position: fixed;
-
-    bottom: -30px;
-
-    pointer-events: none;
-
-    z-index: 100;
-
-    animation:
-        floatHeart 6s linear forwards;
-}
-
-@keyframes floatHeart {
-
-    from {
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: 1;
-    }
-
-    to {
-
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-    .home-content {
-
-        padding: 40px 25px;
-    }
-
-    .home-content h1 {
-
-        font-size: 38px;
-    }
-
-    .home-content h2 {
-
-        font-size: 23px;
-    }
-
-    .home-content p {
-
-        font-size: 17px;
-    }
-
-    .page-title {
-
-        font-size: 32px;
-    }
-
-    .letter {
-
-        padding: 30px 25px;
-    }
-
-    .letter p {
-
-        font-size: 17px;
-    }
-
-    .date-container h1 {
-
-        font-size: 32px;
-    }
-
-    .date-question {
-
-        font-size: 24px;
-    }
-
-    .planning-box {
-
-        padding: 22px 18px;
-    }
-
-    .food-options {
-
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-
-        height: 280px;
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            min-height: 100vh;
+            color: #4a1c2b;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+            width: 100%;
+            padding: 30px 20px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 40px 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #d6336c;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #d6336c;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .main-button {
+            background: #d6336c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .main-button:hover {
+            transform: scale(1.05);
+            background: #b82d5d;
+        }
+
+        .secondary-button {
+            background: #fff;
+            color: #d6336c;
+            border: 2px solid #d6336c;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .secondary-button:hover {
+            background: #d6336c;
+            color: white;
+        }
+
+        .letter {
+            text-align: left;
+            background: #fff8fa;
+            padding: 25px;
+            border-radius: 18px;
+            margin: 20px 0;
+        }
+
+        .letter p {
+            font-size: 17px;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .options label {
+            display: block;
+            margin: 12px;
+            font-size: 18px;
+        }
+
+        input[type="date"],
+        input[type="time"] {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 8px;
+        }
+
+        select {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 8px;
+        }
+
+        .date-details {
+            display: none;
+            margin-top: 25px;
+        }
+
+        .confirmation {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background: #fff0f5;
+            border-radius: 18px;
+        }
+
+        .memories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .memories img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .memories img:first-child {
+            grid-column: span 2;
+            height: 350px;
+        }
+
+        .heart {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .small-text {
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+
+            .memories {
+                grid-template-columns: 1fr;
+            }
+
+            .memories img:first-child {
+                grid-column: span 1;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- =================================================
-     HOME PAGE
-================================================= -->
-
-<div
-    class="page active"
-    id="homePage">
-
-    <div class="home-overlay"></div>
-
-    <div class="home-content">
-
-        <div class="home-heart">
-            ❤️
-        </div>
-
-        <h1>
-            Happy Birthday, My Love
-        </h1>
-
-        <h2>
-            Today is your special day 🥰
-        </h2>
-
-        <p>
-            I made something special just for you.
-            <br>
-            There are a few little surprises waiting for you... 💕
-        </p>
-
-        <button
-            class="main-button"
-            onclick="showPage('letterPage')">
-
-            Open Your Surprise ✨
-
-        </button>
-
-    </div>
-
-</div>
+    <!-- MUSIC -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday-song.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
 
 
+    <!-- HOME PAGE -->
+    <section id="homePage" class="page active">
+        <div class="container">
 
-<!-- =================================================
-     LETTER PAGE
-================================================= -->
+            <div class="heart">❤️</div>
 
-<div
-    class="page"
-    id="letterPage">
-
-    <div class="letter-container">
-
-        <h1 class="page-title">
-            A Letter For You 💌
-        </h1>
-
-
-        <div class="letter">
+            <h1>Happy Birthday!</h1>
 
             <p>
-                My Love,
+                Today is a very special day because it's the birthday
+                of someone very special to me.
             </p>
 
             <p>
-                On your special day, I just want you to know
-                how grateful I am to have you in my life.
-                You have brought so many beautiful moments,
-                smiles and memories into my world.
+                I have prepared a little surprise for you...
             </p>
 
-            <p>
-                Every moment spent with you has become
-                something special to me. Your smile,
-                your laughter and simply having you beside me
-                make my days so much better.
-            </p>
-
-            <p>
-                I may not always be able to put everything
-                I feel into words, but I hope you always know
-                how important you are to me.
-            </p>
-
-            <p>
-                I want us to keep creating beautiful memories,
-                laughing together, travelling together,
-                supporting each other and making every year
-                more special than the last.
-            </p>
-
-            <p>
-                Happy Birthday once again, my love. 🎂❤️
-            </p>
-
-            <p class="letter-signature">
-                Forever yours ❤️
-            </p>
-
-        </div>
-
-
-        <div class="letter-buttons">
-
-            <button
-                class="main-button"
-                onclick="showPage('datePage')">
-
-                Done reading the letter?click here dear ❤️
-
-            </button>
-
-            <br>
-
-            <button
-                class="back-button"
-                onclick="showPage('homePage')">
-
-                ← Back To Home
-
+            <button class="main-button" onclick="openSurprise()">
+                Open Your Surprise ✨
             </button>
 
         </div>
-
-    </div>
-
-</div>
+    </section>
 
 
+    <!-- LETTER PAGE -->
+    <section id="letterPage" class="page">
+        <div class="container">
 
-<!-- =================================================
-     DATE PAGE
-================================================= -->
+            <h2>For You ❤️</h2>
 
-<div
-    class="page"
-    id="datePage">
+            <div class="letter">
 
-    <div class="date-container">
+                <p>
+                    Happy Birthday to the most special person in my life.
+                </p>
 
-        <div class="date-icon">
-            💕
-        </div>
+                <p>
+                    Every moment spent with you becomes a beautiful memory.
+                    You bring happiness, love and so many beautiful moments
+                    into my life.
+                </p>
 
+                <p>
+                    I hope this birthday brings you everything you wish for
+                    and many more beautiful moments ahead.
+                </p>
 
-        <h1>
-            One More Question...
-        </h1>
+                <p>
+                    Today is your day, so let's make it special. ❤️
+                </p>
 
-
-        <p class="date-question">
-            Will you go on a date with me? 🥰
-        </p>
-
-
-        <p class="date-subtitle">
-            Choose carefully... 😜❤️
-        </p>
-
-
-        <!-- YES / NO -->
-
-        <div
-            class="date-buttons"
-            id="dateButtons">
-
-            <button
-                class="yes-button"
-                id="yesButton">
-
-                YES ❤️
-
-            </button>
-
-
-            <button
-                class="no-button"
-                id="noButton">
-
-                NO 😜
-
-            </button>
-
-        </div>
-
-
-        <!-- =========================================
-             DATE PLANNING
-        ========================================== -->
-
-        <div id="datePlanning">
-
-
-            <div class="accepted-message">
-
-                Yayyyyy! ❤️🥰
-                <br>
-                I knew you would say YES! 💕
+                <p>
+                    With lots of love,
+                    <br>
+                    Yours ❤️
+                </p>
 
             </div>
 
+            <button class="main-button" onclick="openDatePage()">
+                One More Surprise 💕
+            </button>
 
-            <div class="planning-box">
-
-                <h2>
-                    Let's Plan Our Date 🥰
-                </h2>
-
-
-                <!-- DATE -->
-
-                <div class="selection-group">
-
-                    <label for="datePicker">
-                        📅 Pick a Date
-                    </label>
-
-                    <input
-                        type="date"
-                        id="datePicker">
-
-                </div>
+        </div>
+    </section>
 
 
-                <!-- TIME -->
+    <!-- DATE PAGE -->
+    <section id="datePage" class="page">
+        <div class="container">
 
-                <div class="selection-group">
+            <h2>Will You Go On A Date With Me? ❤️</h2>
 
-                    <label for="timePicker">
-                        ⏰ Pick a Time
-                    </label>
+            <p>
+                I have a special date planned for us.
+            </p>
 
-                    <input
-                        type="time"
-                        id="timePicker">
+            <button class="main-button" onclick="sayYes()">
+                YES ❤️
+            </button>
 
-                </div>
+            <button
+                class="secondary-button"
+                id="noButton"
+                onclick="moveNoButton()">
+                NO 😜
+            </button>
 
 
-                <!-- FOOD -->
+            <!-- DATE DETAILS -->
+            <div id="dateDetails" class="date-details">
 
-                <div class="selection-group">
+                <h2>Let's Plan Our Date 💕</h2>
+
+                <p>Select our date:</p>
+
+                <input
+                    type="date"
+                    id="dateInput"
+                >
+
+                <p>Select our time:</p>
+
+                <input
+                    type="time"
+                    id="timeInput"
+                >
+
+                <p>What should we eat? 🍕</p>
+
+                <div class="options">
 
                     <label>
-                        🍽️ What would you like to eat?
+                        <input
+                            type="radio"
+                            name="food"
+                            value="Pizza">
+                        Pizza 🍕
                     </label>
 
+                    <label>
+                        <input
+                            type="radio"
+                            name="food"
+                            value="Biryani">
+                        Biryani 🍗
+                    </label>
 
-                    <div class="food-options">
+                    <label>
+                        <input
+                            type="radio"
+                            name="food"
+                            value="Burger">
+                        Burger 🍔
+                    </label>
 
+                    <label>
+                        <input
+                            type="radio"
+                            name="food"
+                            value="Italian">
+                        Italian 🍝
+                    </label>
 
-                        <div class="food-option">
+                    <label>
+                        <input
+                            type="radio"
+                            name="food"
+                            value="Chinese">
+                        Chinese 🥡
+                    </label>
 
-                            <input
-                                type="radio"
-                                name="food"
-                                id="pizza"
-                                value="Pizza 🍕">
-
-                            <label for="pizza">
-                                🍕 Pizza
-                            </label>
-
-                        </div>
-
-
-                        <div class="food-option">
-
-                            <input
-                                type="radio"
-                                name="food"
-                                id="biryani"
-                                value="Biryani 🍛">
-
-                            <label for="biryani">
-                                🍛 Biryani
-                            </label>
-
-                        </div>
-
-
-                        <div class="food-option">
-
-                            <input
-                                type="radio"
-                                name="food"
-                                id="burger"
-                                value="Burger 🍔">
-
-                            <label for="burger">
-                                🍔 Burger
-                            </label>
-
-                        </div>
-
-
-                        <div class="food-option">
-
-                            <input
-                                type="radio"
-                                name="food"
-                                id="italian"
-                                value="Italian 🍝">
-
-                            <label for="italian">
-                                🍝 Italian
-                            </label>
-
-                        </div>
-
-
-                        <div class="food-option">
-
-                            <input
-                                type="radio"
-                                name="food"
-                                id="chinese"
-                                value="Chinese 🥡">
-
-                            <label for="chinese">
-                                🥡 Chinese
-                            </label>
-
-                        </div>
-
-
-                        <div class="food-option">
-
-                            <input
-                                type="radio"
-                                name="food"
-                                id="dessert"
-                                value="Dessert 🍰">
-
-                            <label for="dessert">
-                                🍰 Dessert
-                            </label>
-
-                        </div>
-
-                    </div>
+                    <label>
+                        <input
+                            type="radio"
+                            name="food"
+                            value="Dessert">
+                        Dessert 🍰
+                    </label>
 
                 </div>
 
-
-                <!-- CONFIRM -->
-
-                <button
-                    class="main-button confirm-date-button"
-                    id="confirmDateButton">
-
-                    Confirm Our Date ❤️
-
+                <button class="main-button" onclick="confirmDate()">
+                    Confirm Our Date 💕
                 </button>
 
-
-                <!-- FINAL CONFIRMATION -->
-
-                <div
-                    class="final-confirmation"
-                    id="finalConfirmation">
-                </div>
+            </div>
 
 
-                <!-- MEMORIES -->
+            <!-- CONFIRMATION -->
+            <div id="confirmation" class="confirmation">
+
+                <h2>Date Confirmed! ❤️</h2>
+
+                <p id="confirmationText"></p>
 
                 <button
-                    class="main-button memories-button"
-                    id="memoriesButton"
-                    onclick="showPage('memoriesPage')">
-
-                    Our Memories 📸❤️
-
+                    class="main-button"
+                    onclick="openMemories()">
+                    See Our Memories 📸
                 </button>
 
             </div>
 
         </div>
+    </section>
 
 
-        <!-- BACK TO LETTER -->
+    <!-- MEMORIES PAGE -->
+    <section id="memoriesPage" class="page">
+        <div class="container">
 
-        <button
-            class="back-button"
-            onclick="showPage('letterPage')">
+            <h2>Our Beautiful Memories ❤️</h2>
 
-            ← Back To Letter
+            <p>
+                Some beautiful moments that I will always cherish.
+            </p>
 
-        </button>
+            <div class="memories">
 
-    </div>
+                <!-- IMPORTANT:
+                     These filenames must exactly match GitHub.
+                     photo1.JPG and photo2.JPG are confirmed from your repo.
+                -->
 
-</div>
+                <img
+                    src="photos/main.JPG"
+                    alt="Our Memory">
 
+                <img
+                    src="photos/photo1.JPG"
+                    alt="Memory 1">
 
+                <img
+                    src="photos/photo2.JPG"
+                    alt="Memory 2">
 
-<!-- =================================================
-     MEMORIES PAGE
-================================================= -->
+                <img
+                    src="photos/photo3.JPG"
+                    alt="Memory 3">
 
-<div
-    class="page"
-    id="memoriesPage">
+                <img
+                    src="photos/photo4.JPG"
+                    alt="Memory 4">
 
-    <div class="memories-container">
+                <img
+                    src="photos/photo5.JPG"
+                    alt="Memory 5">
 
-        <h1>
-            Our Beautiful Memories 📸❤️
-        </h1>
-
-
-        <div class="gallery">
-
-
-            <img
-                src="photos/main.jpg"
-                alt="Our Memory"
-                onerror="this.style.display='none'">
-
-
-            <img
-                src="photos/photo1.jpg"
-                alt="Memory 1"
-                onerror="this.style.display='none'">
-
-
-            <img
-                src="photos/photo2.jpg"
-                alt="Memory 2"
-                onerror="this.style.display='none'">
-
-
-            <img
-                src="photos/photo3.jpg"
-                alt="Memory 3"
-                onerror="this.style.display='none'">
-
-
-            <img
-                src="photos/photo4.jpg"
-                alt="Memory 4"
-                onerror="this.style.display='none'">
-
-
-            <img
-                src="photos/photo5.jpg"
-                alt="Memory 5"
-                onerror="this.style.display='none'">
-
-        </div>
-
-
-        <div class="memory-navigation">
-
-            <button
-                class="main-button"
-                onclick="showPage('datePage')">
-
-                ← Back To Date
-
-            </button>
+            </div>
 
             <br>
 
             <button
-                class="back-button"
-                onclick="showPage('homePage')">
+                class="secondary-button"
+                onclick="backToDate()">
+                ← Back to Date
+            </button>
 
-                🏠 Back To Home
-
+            <button
+                class="secondary-button"
+                onclick="goHome()">
+                🏠 Home
             </button>
 
         </div>
+    </section>
 
-    </div>
 
-</div>
+    <script>
 
+        const birthdayMusic =
+            document.getElementById("birthdayMusic");
 
 
-<!-- =================================================
-     JAVASCRIPT
-================================================= -->
+        /* SHOW PAGE */
 
-<script>
+        function showPage(pageId) {
 
+            const pages =
+                document.querySelectorAll(".page");
 
-/* =========================================
-   GET ELEMENTS
-========================================= */
+            pages.forEach(function(page) {
+                page.classList.remove("active");
+            });
 
-const noButton =
-    document.getElementById("noButton");
+            document
+                .getElementById(pageId)
+                .classList.add("active");
 
-const yesButton =
-    document.getElementById("yesButton");
-
-const dateButtons =
-    document.getElementById("dateButtons");
-
-const datePlanning =
-    document.getElementById("datePlanning");
-
-const datePicker =
-    document.getElementById("datePicker");
-
-const timePicker =
-    document.getElementById("timePicker");
-
-const confirmDateButton =
-    document.getElementById("confirmDateButton");
-
-const finalConfirmation =
-    document.getElementById("finalConfirmation");
-
-const memoriesButton =
-    document.getElementById("memoriesButton");
-
-
-/* =========================================
-   PAGE NAVIGATION
-========================================= */
-
-function showPage(pageId) {
-
-    const pages =
-        document.querySelectorAll(".page");
-
-
-    pages.forEach(function(page) {
-
-        page.classList.remove("active");
-
-    });
-
-
-    const selectedPage =
-        document.getElementById(pageId);
-
-
-    selectedPage.classList.add("active");
-
-
-    /*
-       If Date page is opened,
-       reset the complete date process.
-    */
-
-    if (pageId === "datePage") {
-
-        resetDatePage();
-
-    }
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-}
-
-
-/* =========================================
-   RESET DATE PAGE
-========================================= */
-
-function resetDatePage() {
-
-
-    /*
-       IMPORTANT:
-       Show YES and NO again.
-    */
-
-    dateButtons.style.display =
-        "block";
-
-
-    yesButton.style.display =
-        "inline-block";
-
-
-    noButton.style.display =
-        "inline-block";
-
-
-    yesButton.innerHTML =
-        "YES ❤️";
-
-
-    /*
-       Reset NO position
-    */
-
-    noButton.style.left =
-        "55%";
-
-    noButton.style.top =
-        "0";
-
-
-    /*
-       Hide date planning
-    */
-
-    datePlanning.style.display =
-        "none";
-
-
-    /*
-       Clear date
-    */
-
-    datePicker.value =
-        "";
-
-
-    /*
-       Clear time
-    */
-
-    timePicker.value =
-        "";
-
-
-    /*
-       Clear food
-    */
-
-    const foodChoices =
-        document.querySelectorAll(
-            'input[name="food"]'
-        );
-
-
-    foodChoices.forEach(
-        function(food) {
-
-            food.checked =
-                false;
-
-        }
-    );
-
-
-    /*
-       Clear confirmation
-    */
-
-    finalConfirmation.style.display =
-        "none";
-
-
-    finalConfirmation.innerHTML =
-        "";
-
-
-    /*
-       Hide memories
-    */
-
-    memoriesButton.style.display =
-        "none";
-
-}
-
-
-/* =========================================
-   MOVE NO BUTTON
-========================================= */
-
-function moveNoButton() {
-
-    const containerWidth =
-        dateButtons.clientWidth;
-
-
-    const containerHeight =
-        dateButtons.clientHeight;
-
-
-    const buttonWidth =
-        noButton.offsetWidth;
-
-
-    const buttonHeight =
-        noButton.offsetHeight;
-
-
-    const maxX =
-        containerWidth - buttonWidth;
-
-
-    const maxY =
-        containerHeight - buttonHeight;
-
-
-    const randomX =
-        Math.random() * maxX;
-
-
-    const randomY =
-        Math.random() * maxY;
-
-
-    noButton.style.left =
-        Math.max(0, randomX) + "px";
-
-
-    noButton.style.top =
-        Math.max(0, randomY) + "px";
-
-}
-
-
-/*
-   Desktop
-*/
-
-noButton.addEventListener(
-    "mouseenter",
-    moveNoButton
-);
-
-
-/*
-   Mobile
-*/
-
-noButton.addEventListener(
-    "touchstart",
-    function(event) {
-
-        event.preventDefault();
-
-        moveNoButton();
-
-    }
-);
-
-
-/*
-   If clicked
-*/
-
-noButton.addEventListener(
-    "click",
-    function(event) {
-
-        event.preventDefault();
-
-        moveNoButton();
-
-    }
-);
-
-
-/* =========================================
-   YES BUTTON
-========================================= */
-
-yesButton.addEventListener(
-    "click",
-    function() {
-
-
-        /*
-           Hide YES / NO buttons.
-        */
-
-        dateButtons.style.display =
-            "none";
-
-
-        /*
-           Show accepted message
-           and date planning.
-        */
-
-        datePlanning.style.display =
-            "block";
-
-
-        createHearts();
-
-        createConfetti();
-
-    }
-);
-
-
-/* =========================================
-   CONFIRM DATE
-========================================= */
-
-confirmDateButton.addEventListener(
-    "click",
-    function() {
-
-
-        const selectedDate =
-            datePicker.value;
-
-
-        const selectedTime =
-            timePicker.value;
-
-
-        const selectedFood =
-            document.querySelector(
-                'input[name="food"]:checked'
-            );
-
-
-        /*
-           DATE VALIDATION
-        */
-
-        if (!selectedDate) {
-
-            alert(
-                "Please choose a date ❤️"
-            );
-
-            return;
+            window.scrollTo(0, 0);
         }
 
 
-        /*
-           TIME VALIDATION
-        */
+        /* OPEN SURPRISE */
 
-        if (!selectedTime) {
+        function openSurprise() {
 
-            alert(
-                "Please choose a time ⏰❤️"
-            );
+            showPage("letterPage");
 
-            return;
+            birthdayMusic.volume = 0.7;
+
+            birthdayMusic.load();
+
+            birthdayMusic.play()
+                .then(function() {
+
+                    console.log(
+                        "Birthday music started ❤️"
+                    );
+
+                })
+                .catch(function(error) {
+
+                    console.log(
+                        "Music could not start:",
+                        error
+                    );
+
+                });
         }
 
 
-        /*
-           FOOD VALIDATION
-        */
+        /* OPEN DATE PAGE */
 
-        if (!selectedFood) {
+        function openDatePage() {
 
-            alert(
-                "Please choose something delicious to eat 🍕❤️"
-            );
+            showPage("datePage");
 
-            return;
         }
 
 
-        /*
-           FORMAT DATE
-        */
+        /* YES BUTTON */
 
-        const dateObject =
-            new Date(
-                selectedDate +
-                "T00:00:00"
-            );
+        function sayYes() {
 
+            document
+                .getElementById("dateDetails")
+                .style.display = "block";
 
-        const formattedDate =
-            dateObject.toLocaleDateString(
-                "en-IN",
-                {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric"
-                }
-            );
+            document
+                .getElementById("noButton")
+                .style.display = "none";
 
+        }
 
-        /*
-           FORMAT TIME
-        */
 
-        const timeObject =
-            new Date(
-                "2000-01-01T" +
-                selectedTime
-            );
+        /* NO BUTTON */
 
+        function moveNoButton() {
 
-        const formattedTime =
-            timeObject.toLocaleTimeString(
-                "en-IN",
-                {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    hour12: true
-                }
-            );
+            const button =
+                document.getElementById("noButton");
 
+            const maxX =
+                window.innerWidth - 150;
 
-        /*
-           SHOW FINAL CONFIRMATION
-        */
+            const maxY =
+                window.innerHeight - 80;
 
-        finalConfirmation.innerHTML =
+            const randomX =
+                Math.random() * Math.max(maxX, 100);
 
-            "Our date is officially planned! ❤️🥰" +
+            const randomY =
+                Math.random() * Math.max(maxY, 100);
 
-            "<br><br>" +
+            button.style.position = "fixed";
 
-            "📅 Date: " +
-            formattedDate +
+            button.style.left =
+                randomX + "px";
 
-            "<br>" +
+            button.style.top =
+                randomY + "px";
+        }
 
-            "⏰ Time: " +
-            formattedTime +
 
-            "<br>" +
+        /* CONFIRM DATE */
 
-            "🍽️ Food: " +
-            selectedFood.value +
+        function confirmDate() {
 
-            "<br><br>" +
+            const date =
+                document.getElementById("dateInput").value;
 
-            "I can't wait for our date! 💕";
+            const time =
+                document.getElementById("timeInput").value;
 
+            const food =
+                document.querySelector(
+                    'input[name="food"]:checked'
+                );
 
-        finalConfirmation.style.display =
-            "block";
 
+            if (!date) {
 
-        /*
-           ONLY AFTER EVERYTHING
-           IS SELECTED AND CONFIRMED
-           SHOW MEMORIES.
-        */
+                alert("Please select a date ❤️");
 
-        memoriesButton.style.display =
-            "inline-block";
+                return;
+            }
 
 
-        createHearts();
+            if (!time) {
 
-        createConfetti();
+                alert("Please select a time ❤️");
 
-    }
-);
+                return;
+            }
 
 
-/* =========================================
-   FLOATING HEARTS
-========================================= */
+            if (!food) {
 
-function createHearts() {
+                alert("Please choose what we should eat ❤️");
 
-    for (
-        let i = 0;
-        i < 25;
-        i++
-    ) {
+                return;
+            }
 
-        const heart =
-            document.createElement("div");
 
+            const selectedDate =
+                new Date(date + "T00:00:00");
 
-        heart.className =
-            "heart";
 
+            const formattedDate =
+                selectedDate.toLocaleDateString(
+                    "en-IN",
+                    {
+                        day: "2-digit",
+                        month: "long",
+                        year: "numeric"
+                    }
+                );
 
-        const hearts = [
 
-            "❤️",
-            "💕",
-            "💗",
-            "💖",
-            "💓"
+            document
+                .getElementById("confirmationText")
+                .innerHTML =
+                "Our date is planned for <strong>"
+                + formattedDate
+                + "</strong> at <strong>"
+                + time
+                + "</strong>."
+                + "<br><br>"
+                + "And we are having <strong>"
+                + food.value
+                + "</strong>! ❤️";
 
-        ];
 
+            document
+                .getElementById("confirmation")
+                .style.display = "block";
 
-        heart.innerHTML =
-            hearts[
-                Math.floor(
-                    Math.random() *
-                    hearts.length
-                )
-            ];
 
+            document
+                .getElementById("confirmation")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
 
-        heart.style.left =
-            Math.random() *
-            100 +
-            "vw";
+        }
 
 
-        heart.style.fontSize =
-            (15 +
-            Math.random() * 25) +
-            "px";
+        /* OPEN MEMORIES */
 
+        function openMemories() {
 
-        heart.style.animationDuration =
-            (4 +
-            Math.random() * 4) +
-            "s";
+            showPage("memoriesPage");
 
+        }
 
-        document.body.appendChild(
-            heart
-        );
 
+        /* BACK TO DATE */
 
-        setTimeout(
-            function() {
+        function backToDate() {
 
-                heart.remove();
+            resetDatePage();
 
-            },
-            8000
-        );
+            showPage("datePage");
 
-    }
+        }
 
-}
 
+        /* RESET DATE PAGE */
 
-/* =========================================
-   CONFETTI
-========================================= */
+        function resetDatePage() {
 
-function createConfetti() {
+            document
+                .getElementById("dateInput")
+                .value = "";
 
-    for (
-        let i = 0;
-        i < 80;
-        i++
-    ) {
+            document
+                .getElementById("timeInput")
+                .value = "";
 
-        const confetti =
-            document.createElement("div");
+            const foodOptions =
+                document.querySelectorAll(
+                    'input[name="food"]'
+                );
 
+            foodOptions.forEach(function(option) {
+                option.checked = false;
+            });
 
-        confetti.style.position =
-            "fixed";
 
+            document
+                .getElementById("dateDetails")
+                .style.display = "none";
 
-        confetti.style.width =
-            "10px";
 
+            document
+                .getElementById("confirmation")
+                .style.display = "none";
 
-        confetti.style.height =
-            "10px";
 
+            const noButton =
+                document.getElementById("noButton");
 
-        confetti.style.left =
-            Math.random() *
-            100 +
-            "vw";
+            noButton.style.display = "inline-block";
 
+            noButton.style.position = "static";
 
-        confetti.style.top =
-            "-20px";
+        }
 
 
-        confetti.style.zIndex =
-            "9999";
+        /* HOME */
 
+        function goHome() {
 
-        confetti.style.background =
-            "hsl(" +
-            Math.random() * 360 +
-            ", 80%, 60%)";
+            showPage("homePage");
 
+        }
 
-        confetti.style.animation =
-            "confettiFall 3s linear forwards";
-
-
-        document.body.appendChild(
-            confetti
-        );
-
-
-        setTimeout(
-            function() {
-
-                confetti.remove();
-
-            },
-            3500
-        );
-
-    }
-
-}
-
-
-/* =========================================
-   CONFETTI ANIMATION
-========================================= */
-
-const confettiStyle =
-    document.createElement("style");
-
-
-confettiStyle.innerHTML = `
-
-@keyframes confettiFall {
-
-    0% {
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
-    100% {
-
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-    }
-
-}
-
-`;
-
-
-document.head.appendChild(
-    confettiStyle
-);
-
-
-/* =========================================
-   AUTOMATIC HEARTS
-========================================= */
-
-setInterval(
-    function() {
-
-        const heart =
-            document.createElement("div");
-
-
-        heart.className =
-            "heart";
-
-
-        heart.innerHTML =
-            "💕";
-
-
-        heart.style.left =
-            Math.random() *
-            100 +
-            "vw";
-
-
-        heart.style.fontSize =
-            (15 +
-            Math.random() * 15) +
-            "px";
-
-
-        document.body.appendChild(
-            heart
-        );
-
-
-        setTimeout(
-            function() {
-
-                heart.remove();
-
-            },
-            6000
-        );
-
-    },
-    2500
-);
-
-
-</script>
+    </script>
 
 </body>
-
 </html>
-```
